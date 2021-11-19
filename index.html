@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>muliside-slide-caption</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 350px;
+            margin: 175px auto;
+            overflow: hidden;
+        }
+        .box .img-box{
+            height: 100%;
+            width: 100%;
+            position: relative;
+            }
+        .box .img-box img{
+            width: 100%;
+            height: 100%;
+        }
+        .topslid{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .img-box:before,
+        .img-box:after,
+        .img-box .topslid:before,
+        .img-box .topslid:after
+        {
+            content: "";
+            width: 50%;
+            height: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            position: absolute;
+            transition: all 0.5s ease-in-out 0s;
+        }
+        .img-box:before{
+            top: 0;
+            left: -100%;
+        }
+        .box:hover .img-box:before{
+            top: 0;
+            left: 0;
+        }
+        .img-box:after{
+            top: -100%;
+            right: 0;
+        }
+        .box:hover .img-box:after{
+            top: 0;
+            right: 0;
+        }
+
+        .topslid:before{
+            bottom: -100%;
+            left: 0;
+        }
+        .box:hover .topslid:before{
+            bottom: 0;
+            left: 0;
+        }
+        .topslid:after{
+            bottom: 0;
+            right: -100%;
+        }
+        .box:hover .topslid:after{
+            bottom: 0;
+            right: 0;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="img-box">
+            <img src="ej.jpg" alt="">
+            <div class="topslid"></div>
+        </div>
+        
+    </div>
+</body>
+</html>
